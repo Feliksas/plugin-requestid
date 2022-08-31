@@ -29,7 +29,7 @@ func New(ctx context.Context, next http.Handler, config *Config, _ string) (http
 		}
 		id := fmt.Sprintf("%x", b)
 
-		r.Header.Add(config.HeaderName, id)
+		r.Header.Set(config.HeaderName, id)
 
 		next.ServeHTTP(rw, r)
 	}), nil
