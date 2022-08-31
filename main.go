@@ -27,7 +27,7 @@ func New(ctx context.Context, next http.Handler, config *Config, _ string) (http
 		if err != nil {
 			log.Fatal(err)
 		}
-		id := fmt.Sprintf("%x", b[])
+		id := fmt.Sprintf("%x", b)
 
 		r.Header.Add(config.HeaderName, id)
 
